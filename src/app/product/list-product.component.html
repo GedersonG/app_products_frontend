@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover mx-auto">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+            <th scope="col">See</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>${{product.price}}</td>
+            <td><button class="btn btn-outline-danger" (click)="delete(product.id)"><i class="fa-sharp fa-solid fa-trash"></i> Remove</button></td>
+            <td><button class="btn btn-outline-warning" routerLink="/update/{{product.id}}"><i class="fa-solid fa-pen-to-square"></i> Update</button></td>
+            <td><button class="btn btn-outline-primary" routerLink="/detail/{{product.id}}"><i class="fa-solid fa-eye"></i> Look it</button></td>
+        </tr>
+    </tbody>
+</table>
