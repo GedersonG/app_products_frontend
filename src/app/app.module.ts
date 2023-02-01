@@ -13,7 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login.component';
+import { RegisterComponent } from './auth/register.component';
+import { MenuComponent } from './menu/menu.component';
+import { IndexComponent } from './index/index.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { FormsModule } from '@angular/forms'
     ListProductComponent,
     DetailProductComponent,
     NewProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    LoginComponent,
+    RegisterComponent,
+    MenuComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
