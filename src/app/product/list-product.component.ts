@@ -18,7 +18,7 @@ export class ListProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private toastr: ToastrService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
   ) { }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class ListProductComponent implements OnInit {
     });
   }
 
-  chargeProducts(): void {
+  chargeProducts() {
     this.productService.list().subscribe(
       data => {
         this.products = data

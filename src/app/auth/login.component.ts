@@ -39,12 +39,15 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUser).subscribe(
       data => {
         this.isLogged = true;
-        this.isLoginFail = false;
 
         this.tokenService.setToken(data.token);
         this.tokenService.setUsername(data.username);
         this.tokenService.setAuthorities(data.authorities);
         this.role = data.authorities;
+        this.toastr.success('Welcome ' + data.username, 'OK', {
+          timeOut: 3000,
+          positionClass: 'toast-top-center'
+        })
         this.router.navigate(["/"]);
       },
       err => {
