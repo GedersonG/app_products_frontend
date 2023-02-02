@@ -1,1 +1,65 @@
-<p>login works!</p>
+<app-menu></app-menu>
+<div class="text-center" *ngIf="isLogged; else logOut">
+  <h2>Ya has iniciado sesión</h2>
+</div>
+
+<ng-template #logOut>
+  <div class="container">
+    <div class="container d-flex justify-content-center mt-3" id="content">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/login"
+                >Sign In</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                class="form-control"
+                [(ngModel)]="username"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="username">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-control"
+                [(ngModel)]="password"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <button
+                class="btn btn-outline-success btn-block"
+                [disabled]="!f.valid"
+              >
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> Log In
+              </button>
+            </div>
+          </form>
+          <div
+            *ngIf="f.submitted && isLoginFail"
+            class="alert alert-danger mt-3 mx-auto"
+          >
+            The name or password is incorrect
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

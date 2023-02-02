@@ -7,6 +7,7 @@ import { ListProductComponent } from './product/list-product.component';
 import { DetailProductComponent } from './product/detail-product.component';
 import { NewProductComponent } from './product/new-product.component';
 import { EditProductComponent } from './product/edit-product.component';
+import { interceptorProvider } from './interceptors/product-interceptor.service';
 
 // External
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,7 @@ import { LoginComponent } from './auth/login.component';
 import { RegisterComponent } from './auth/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { IndexComponent } from './index/index.component'
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { IndexComponent } from './index/index.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

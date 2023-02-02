@@ -1,1 +1,25 @@
-<p>register works!</p>
+<app-menu></app-menu>
+<div class="text-center" *ngIf="isLogged; else logOut">
+    <h2>Ya has iniciado sesión</h2>
+  </div>
+  
+  <ng-template #logOut>
+    <div class="container d-flex justify-content-center" id="content">
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/login"
+                >Sign In</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/register">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body"></div>
+      </div>
+    </div>
+  </ng-template>
+  
